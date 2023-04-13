@@ -5,9 +5,20 @@ const readline = require('readline');
 
 // Funzione per calcolare il fattoriale di un numero intero non negativo
 function factorial(n) {
-  
-    // SCRIVI QUI IL TUO CODICE
-
+    n = BigInt(n);
+    if (n == 0n) {
+        return 1n;
+    }
+    if (n < 0n) {
+        return "Il numero deve essere non negativo";
+    }
+    if (n % 1n != 0n) {
+        return "Il numero deve essere intero";
+    }
+    if (n == 1n) {
+        return 1n;
+    }
+    return n * factorial(n - 1n);
 }
 
 // Acquisire l'input in base al tipo di input
